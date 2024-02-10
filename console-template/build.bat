@@ -1,0 +1,1 @@
+copy .\appsetting* .\bin\Debug\net8.0\
