@@ -18,9 +18,10 @@ class Program
         var builder = new ConfigurationBuilder()
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddEnvironmentVariables("NETCORE_")
             .AddJsonFile($"appsettings.{env}.json", optional: true, reloadOnChange: true)
-            .AddUserSecrets("c1771762-d72e-414c-b14c-34a12442d2ad")
-            .AddEnvironmentVariables();
+            .AddCommandLine(args)
+            .AddUserSecrets("c1771762-d72e-414c-b14c-34a12442d2ad");
 
         return builder.Build();
 
