@@ -19,6 +19,7 @@ class Program
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .AddJsonFile($"appsettings.{env}.json", optional: true, reloadOnChange: true)
+            .AddUserSecrets("c1771762-d72e-414c-b14c-34a12442d2ad")
             .AddEnvironmentVariables();
 
         return builder.Build();
